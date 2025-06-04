@@ -13,12 +13,28 @@ if (condición) {
 /*Ejemplo con IF 
     Verificar si un número es positivo.
 */
+let numero = parseFloat(prompt("Ingrese numero"));
+
+if(numero>=0){
+    console.log(numero + 10);
+}
+
+console.log("continua el codigo debajo del condicional");
+
 
 
 /*Ejemplo con IF, ELSE
     Verificar si un número es par o impar.
 */
+numero = parseFloat(prompt("Ingrese numero"));
 
+if(numero % 2 == 0){
+    console.log("El numero es par");
+}else{
+    console.log("El numero es impar");
+}
+
+console.log("continua el codigo debajo del condicional");
 
 /*Ejemplo con IF, ELSE IF, ELSE
     Clasificar una temperatura.
@@ -27,6 +43,17 @@ if (condición) {
     mayor de 25 -> calor
 */
 
+let temperatura = parseFloat(prompt("Ingrese temperatura: "));
+
+if(temperatura<=10){
+    console.log("Esta haciendo frio");
+}else if (temperatura>10 && temperatura<25){
+    console.log("El clima es agradable");
+}else{
+    console.log("Esta haciendo calor");
+}
+
+console.log("continua el codigo debajo del condicional");
 
 /* SWITCH
 switch (expression) {
