@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas Básicas del DOM con JS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .destacado { background-color: yellow; padding: 5px; }
+        table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+        #titulo {color: rgb(46, 206, 94);}
+        #seccion2 {gap:10px}
+    </style>
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header id="encabeza">
+        <h1 id="titulo">Pruebas del DOM con JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="#seccion1">Sección 1</a></li>
+                <li><a href="#seccion2">Sección 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section id="seccion1">
+            <h2>Sección 1: Texto y enlaces</h2>
+            <p id="parrafo1">Este es un párrafo de ejemplo.</p>
+            <p>
+                <strong>Texto en negrita</strong> y 
+                <em>texto en cursiva</em>.</p>
+            <a href="https://google.com" id="enlace">Ir a Google</a>
+            <hr>
+        </section>
+
+        <section id="seccion2">
+            <h2>Sección 2: Listas y tablas</h2>
+            <ul id="lista">
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+            <table id="tabla">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Genero</th>
+                </tr>
+                <tr>
+                    <td>Ana</td>
+                    <td>25</td>
+                    <td>Mujer</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <!-- Formulario -->
+        <section>
+            <h2>Formulario</h2>
+            <form id="formulario">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="color" name="" id="color" >
+                <input type="date" name="" id="fecha">
+                <input type="number" name="" id="numero" placeholder="Numero">
+                <input type="password" name="" id="contrasena" placeholder="password">
+                <button type="button" onclick="inputs()">Enviar</button>
+            </form>
+            <div id="mensaje">
+            </div>
+        </section>
+
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20230521/pngtree-sunflower-full-screen-backdrop-widescreen-photos-image_2684387.jpg" alt="" srcset="">
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p id="pie">© 2024 Pruebas DOM</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
