@@ -12,8 +12,8 @@ document.getElementById('miFormulario').addEventListener('submit', function(e){
     e.preventDefault();
 
     //validar, obtener, mostrar/guardar
-
-
+    let objeto = obtenerValoresFormulario();
+    mostrar(objeto);
 });
 
 //obtener
@@ -48,6 +48,24 @@ function obtenerValoresFormulario(){
     formulario.foto = form.foto.files[0].name;
     
 
-    console.log(formulario);
+    return formulario;
 
+
+}
+
+//funcion mostrar
+function mostrar(objeto){
+    const resultadoDiv = document.getElementById('resultado');
+    let html = '<h2>Datos del Formulario:</h2><ul>';
+    
+    for (const [key, value] of Object.entries(objeto)) {
+        if (Array.isArray(value)) {
+            html += `<li><strong>${key}:</strong> ${value.join(', ')}</li>`;
+        } else {
+            html += `<li><strong>${key}:</strong> ${value || 'No especificado'}</li>`;
+        }
+    }
+    
+    html += '</ul>';
+    resultadoDiv.innerHTML = html;
 }

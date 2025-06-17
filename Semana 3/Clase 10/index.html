@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios DOM - createElement, appendChild, removeChild</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #elementList {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            min-height: 50px;
+        }
+        .item {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+        }
+        .controls {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios con métodos DOM</h1>
+    
+    <!-- Ejercicio 1: createElement y appendChild -->
+    <div class="container">
+        <h2>Ejercicio 1: Crear y agregar elementos</h2>
+        <div class="controls">
+            <input type="text" id="newItemText" placeholder="Texto del nuevo elemento">
+            <button id="addItemBtn">Agregar Elemento</button>
+        </div>
+        <div id="elementList">
+        </div>
+    </div>
+    
+    <!-- Ejercicio 2: removeChild -->
+    <div class="container">
+        <h2>Ejercicio 2: Eliminar elementos</h2>
+        <p>Haz clic en cualquier elemento de la lista para eliminarlo</p>
+        <div id="removableList">
+            <div class="item">Elemento 1</div>
+            <div class="item">Elemento 2</div>
+            <div class="item">Elemento 3</div>
+        </div>
+    </div>
+    
+    <!-- Ejercicio 3: Combinación de métodos -->
+    <div class="container">
+        <h2>Ejercicio 3: Lista dinámica</h2>
+        <div class="controls">
+            <input type="text" id="dynamicItemText" placeholder="Nuevo ítem">
+            <button id="addDynamicItem">Agregar</button>
+            <button id="removeLastItem">Eliminar último</button>
+            <button id="clearAllItems">Limpiar todo</button>
+        </div>
+        <ul id="dynamicList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
