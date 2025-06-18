@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Instagram</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .post {
+            background: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #efefef;
+        }
+        .profile-pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #555;
+        }
+        .username {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .post-actions {
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+        }
+        .like-btn {
+            color: #262626;
+        }
+        .liked {
+            color: #ed4956;
+        }
+        .comment-btn, .share-btn {
+            color: #262626;
+        }
+        .likes-count {
+            font-weight: bold;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        .post-caption {
+            padding: 0 10px 10px;
+            font-size: 14px;
+        }
+        .caption-username {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .comments-section {
+            padding: 0 10px;
+            border-top: 1px solid #efefef;
+        }
+        .comment {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        .comment-username {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .add-comment {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #efefef;
+        }
+        .comment-input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+        .post-btn {
+            background: none;
+            border: none;
+            color: #0095f6;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.3;
+        }
+        .post-btn.active {
+            opacity: 1;
+        }
+        .timestamp {
+            color: #8e8e8e;
+            font-size: 10px;
+            padding: 0 10px 10px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="post" id="post1">
+        <div class="post-header">
+            <div class="profile-pic">J</div>
+            <div class="username">juan_perez</div>
+        </div>
+        <img src="https://picsum.photos/700/400?random" class="post-image" alt="Publicación">
+        <div class="post-actions">
+            <button class="action-btn" id="like-btn1"><i class="fa-regular fa-heart"></i></button>
+            <button class="action-btn"><i class="fa-regular fa-comment"></i></button>
+            <button class="action-btn" id="share-btn1"><i class="fa-solid fa-share"></i></button>
+        </div>
+        <div class="likes-count" id="likes-count1">125 me gusta</div>
+        <div class="post-caption">
+            <span class="caption-username">juan_perez</span>
+            <span>¡Un día increíble en la playa! #verano #vacaciones</span>
+        </div>
+        <div class="comments-section" id="comments1">
+            <div class="comment">
+                <span class="comment-username">maria_g</span>
+                <span>¡Qué envidia! 😍</span>
+            </div>
+            <div class="comment">
+                <span class="comment-username">carlos_l</span>
+                <span>¿Dónde es eso?</span>
+            </div>
+        </div>
+        <div class="timestamp">HACE 2 HORAS</div>
+        <div class="add-comment">
+            <input type="text" class="comment-input" placeholder="Añade un comentario..." id="comment-input1">
+            <button class="post-btn" id="post-comment1">Publicar</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/5142fafa1f.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
