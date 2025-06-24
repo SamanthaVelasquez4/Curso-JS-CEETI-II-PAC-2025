@@ -18,11 +18,18 @@
   </head>
   <body class="claro">
     <h1>LocalStorage</h1>
+    <div id="info"></div>
     <input type="text" placeholder="Ingrese su nombre" id="nombre" />
     <input type="number" placeholder="Ingrese su edad" id="edad" />
-    <input type="text" name="" id="tema" placeholder="Ingrese claro o oscuro" />
-    <button type="button" id="actualizar">Actualizar</button>
-    <div id="info"></div>
-    <script src="script.js"></script>
+    <div style="margin-bottom: 10px;">
+      <p>Escoga el tema de la pagina web: </p>
+      <input type="radio" id="oscuro" name="tema" value="oscuro">
+      <label for="oscuro">oscuro</label>
+      <input type="radio" id="claro" name="tema" value="claro" checked>
+      <label for="claro">claro</label>
+    </div>
+    <button type="button" id="actualizar" onclick="actualizar()">Actualizar</button>
+    <button type="button" id="cerrar" onclick="cerrar()">Cerrar Sesion</button>
+    <script src="index.js"></script>
   </body>
 </html>

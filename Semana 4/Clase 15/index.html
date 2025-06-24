@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD de Álbumes (Estático)</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .crud-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+      }
+      .list-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .album-item {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .album-item:hover {
+        background-color: #b9daf7;
+      }
+      .album-item.active {
+        background-color: #b9bcbc;
+        font-weight: bold;
+      }
+      .album-title {
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      .album-meta {
+        font-size: 0.85em;
+        color: #666;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #2c3e50;
+      }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      .btn {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+        transition: background-color 0.2s;
+      }
+      .btn-primary {
+        background-color: #3498db;
+        color: white;
+      }
+      .btn-primary:hover {
+        background-color: #2980b9;
+      }
+      .btn-danger {
+        background-color: #e74c3c;
+        color: white;
+      }
+      .btn-danger:hover {
+        background-color: #c0392b;
+      }
+      .btn-success {
+        background-color: #2ecc71;
+        color: white;
+      }
+      .btn-success:hover {
+        background-color: #27ae60;
+      }
+      .action-buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .search-box {
+        margin-bottom: 15px;
+      }
+      #new-album-btn {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      .custom-scrollbar {
+        height: 300px;
+        overflow-y: auto;
+        padding: 15px;
+        background: #f5f5f5;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    </style>
+  </head>
+  <body>
+    <h1>CRUD de Álbumes</h1>
+
+    <div class="crud-container">
+      <!-- Lista de álbumes -->
+      <div class="list-container">
+        <button id="new-album-btn" class="btn btn-success">
+          + Nuevo Álbum
+        </button>
+
+        <div class="search-box">
+          <input
+            type="text"
+            placeholder="Buscar álbumes..."
+            style="width: 100%; padding: 8px 12px"
+          />
+        </div>
+
+        <div id="albums-list" class="custom-scrollbar">
+          <div class="album-item active" data-id="1">
+            <div class="album-title">quidem molestiae enim</div>
+            <div class="album-meta">ID: 1 | UserID: 1</div>
+          </div>
+          <div class="album-item" data-id="2">
+            <div class="album-title">sunt qui excepturi placeat culpa</div>
+            <div class="album-meta">ID: 2 | UserID: 1</div>
+          </div>
+          <div class="album-item" data-id="3">
+            <div class="album-title">omnis laborum odio</div>
+            <div class="album-meta">ID: 3 | UserID: 1</div>
+          </div>
+          <div class="album-item" data-id="4">
+            <div class="album-title">non esse culpa molestiae</div>
+            <div class="album-meta">ID: 4 | UserID: 1</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario CRUD -->
+      <div class="form-container">
+        <h2 id="form-title">Editar Álbum</h2>
+
+        <form id="album-form">
+          <input type="hidden" id="album-id" value="1" />
+
+          <div class="form-group">
+            <label for="album-userid">User ID:</label>
+            <input type="text" id="album-userid" value="1" />
+          </div>
+
+          <div class="form-group">
+            <label for="album-title">Título:</label>
+            <input type="text" id="album-title" value="quidem molestiae enim" />
+          </div>
+
+          <div class="action-buttons">
+            <div>
+              <button type="button" class="btn btn-danger" id="btn-delete">Eliminar</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary" id="btn-action">
+                Guardar Cambios
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
