@@ -9,7 +9,6 @@ if(usuario != null){
     ocultarInputs();
     document.body.classList.remove("oscuro", "claro");
     document.body.classList.add(usuario.tema);
-
 }
 
 function actualizar(){
